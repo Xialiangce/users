@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+<!--    <context:property-placeholder location="classpath:application.properties"/>-->
+
+    <!-- 配置单数据源工厂 -->
+    <bean id="dataSource0" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango0.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource1" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango1.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource2" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango2.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource3" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango3.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource4" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango4.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource5" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango5.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource6" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango6.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource7" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango7.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource8" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango8.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dataSource9" class="org.jfaster.mango.datasource.SimpleDataSourceFactory">
+        <property name="dataSource">
+            <bean class="org.jfaster.mango.datasource.DriverManagerDataSource">
+                <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+                <property name="url" value="${mango9.jdbc.url}" />
+                <property name="username" value="${mango.jdbc.username}" />
+                <property name="password" value="${mango.jdbc.password}" />
+            </bean>
+        </property>
+    </bean>
+
+    <!-- 配置多数据源工厂 -->
+    <bean id="dsf" class="org.jfaster.mango.datasource.MultipleDataSourceFactory">
+        <property name="factories">
+            <map>
+                <entry key="dataSource0" value-ref="dataSource0"></entry>
+                <entry key="dataSource1" value-ref="dataSource1"></entry>
+                <entry key="dataSource2" value-ref="dataSource2"></entry>
+                <entry key="dataSource3" value-ref="dataSource3"></entry>
+                <entry key="dataSource4" value-ref="dataSource4"></entry>
+                <entry key="dataSource5" value-ref="dataSource5"></entry>
+                <entry key="dataSource6" value-ref="dataSource6"></entry>
+                <entry key="dataSource7" value-ref="dataSource7"></entry>
+                <entry key="dataSource8" value-ref="dataSource8"></entry>
+                <entry key="dataSource9" value-ref="dataSource9"></entry>
+            </map>
+
+        </property>
+    </bean>
+
+<!--    <bean id="dataSource" class="org.jfaster.mango.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="${mango.jdbc.url}" />
+        <property name="username" value="${mango.jdbc.username}" />
+        <property name="password" value="${mango.jdbc.password}" />
+    </bean>-->
+
+    <!-- 配置mango对象 -->
+    <bean id="mango" class="org.jfaster.mango.operator.Mango" factory-method="newInstance">
+        <property name="dataSourceFactory" ref="dsf" />
+    </bean>
+
+    <!-- 配置扫描使用@DB注解修饰的DAO类 -->
+    <bean class="org.jfaster.mango.plugin.spring.MangoDaoScanner">
+        <property name="packages">
+            <list>
+                <!-- 扫描包名 -->
+                <value>com.xlc.user.dao</value>
+
+                <!-- <value>其他需要扫描的包</value> -->
+            </list>
+        </property>
+    </bean>
+
+
+</beans>
